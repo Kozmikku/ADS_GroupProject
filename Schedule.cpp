@@ -70,3 +70,31 @@ void FetchSchedule(string studentID) {
         schedules[key] = record;
     }
 }
+
+// ---------------------------------------------------
+// Retrieve Classes by Day
+// ---------------------------------------------------
+void GetClassesByDay(string day) {
+    vector<ClassInfo> tempList;
+    for (auto &entry : schedules) {
+        if (entry.second.day == day) {
+            tempList.push_back(entry.second);
+        }
+    }
+
+    if (tempList.empty()) {
+        cout << "No classes scheduled for " << day << ".\n";
+        return;
+    }
+
+    sort(tempList.begin(), tempList.end(),
+         [](ClassInfo a, ClassInfo b) { return a.startTime < b.startTime; });
+
+    cout << "\n--- " << day << " Schedule ---\n";
+    for (auto &info : tempList) {
+        cout << info.startTime << "-" << info.endTime << ": "
+             << info.courseCode << " - " << info.courseName
+             << " | Lecturer: " << info.lecturerName
+             << " | Venue: " << info.venue << "\n";
+    }
+}
