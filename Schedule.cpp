@@ -1,0 +1,29 @@
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <iomanip>
+using namespace std;
+
+struct ClassInfo {
+    string courseCode;
+    string courseName;
+    string lecturerName;
+    string venue;
+    string day;
+    string startTime;
+    string endTime;
+    string programme;
+};
+
+unordered_map<string, ClassInfo> schedules;
+
+// Student info mapping
+struct Student {
+    string id;
+    string name;
+    string programme;
+};
+
+Student currentStudent;
