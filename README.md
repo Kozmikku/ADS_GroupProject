@@ -1,4 +1,4 @@
-# ADS_GroupProject
+# ADS_GroupProject (Schedule System)
 ## 🖥️ Program Flow
 
 ### 🔑 1. Student Login
